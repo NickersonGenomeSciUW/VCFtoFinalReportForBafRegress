@@ -22,4 +22,4 @@ parseVCFToBAFRegress.py takes as input an uncompressed VCF format file as a stre
 
 In the common use case where you wish to provide a compressed vcf.gz that is tabix indexed as input, as well as filter for  PASS variants from autosomes only, make use of [bcftools](http://samtools.github.io/bcftools/bcftools.html) command to uncompress and stream a filtered VCF file:
 
-    bcftools view -f 'PASS,.' 204032460093_R07C01.vcf.gz 1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22 myfile.vcf.gz | python parseVcfToBAFRegress.py > myfile.finalreport.txt
+    bcftools view -f 'PASS,.' myfile.vcf.gz 1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22 | python parseVcfToBAFRegress.py > myfile.finalreport.txt
